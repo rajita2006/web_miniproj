@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Assignments - VIT University</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teacher.css">
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <div class="top-bar">
+                <div class="contact-info">
+                    <span>Phone: +91 416 224 3091</span>
+                    <span>Email: info@vit.ac.in</span>
+                </div>
+                <div class="login-area">
+                    <button id="logout-button" class="fancy-btn">Logout</button>
+                </div>
+            </div>
+            <div class="main-header">
+                <div class="logo">
+                    <h1>VIT University</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="policies.html">School Policies</a></li>
+                        <li><a href="circulars.html">Circulars</a></li>
+                        <li><a href="grades.html">Student Grades</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-banner">
+                <div class="banner-content">
+                    <h1>Manage Assignments</h1>
+                    <p>Create, review and grade student assignments</p>
+                </div>
+            </section>
+
+            <section class="teacher-nav">
+                <div class="container">
+                    <nav class="dashboard-nav">
+                        <ul>
+                            <li class="active"><a href="manage_assignments.html">Manage Assignments</a></li>
+                            <li><a href="upload_materials.html">Upload Materials</a></li>
+                            <li><a href="manage_grades.html">Manage Grades</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="assignment-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Create New Assignment</h2>
+                        <button id="toggle-form-btn" class="toggle-btn">+ Create Assignment</button>
+                    </div>
+                    
+                    <div id="create-assignment-form" class="form-container" style="display: none;">
+                        <form id="assignment-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="course">Course:</label>
+                                    <select id="course" name="course" required>
+                                        <option value="">Select course</option>
+                                        <option value="math101">Mathematics 101</option>
+                                        <option value="eng205">English Literature 205</option>
+                                        <option value="cs150">Computer Science 150</option>
+                                        <option value="bio200">Biology 200</option>
+                                        <option value="phy101">Physics 101</option>
+                                        <option value="hist110">History 110</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="assignment-title">Assignment Title:</label>
+                                    <input type="text" id="assignment-title" name="assignment-title" placeholder="Enter a title for the assignment" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="due-date">Due Date:</label>
+                                    <input type="date" id="due-date" name="due-date" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="total-points">Total Points:</label>
+                                    <input type="number" id="total-points" name="total-points" min="1" max="100" value="100" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="assignment-description">Assignment Description:</label>
+                                <textarea id="assignment-description" name="assignment-description" rows="4" placeholder="Provide detailed instructions for the assignment" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="assignment-materials">Assignment Materials (Optional):</label>
+                                <input type="file" id="assignment-materials" name="assignment-materials">
+                                <p class="file-info">Accepted formats: PDF, DOCX, ZIP (Max size: 10MB)</p>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="submit" class="btn primary-btn">Create Assignment</button>
+                                <button type="button" id="cancel-btn" class="btn secondary-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container">
+                <h2 class="section-title">Active Assignments</h2>
+                <div class="table-responsive">
+                    <table class="assignment-table">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Assignment Title</th>
+                                <th>Created Date</th>
+                                <th>Due Date</th>
+                                <th>Submissions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="active-assignments"></tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section class="container">
+                <h2 class="section-title">Student Submissions</h2>
+                <div class="table-responsive">
+                    <table class="submission-table">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Course</th>
+                                <th>Assignment</th>
+                                <th>Submission Date</th>
+                                <th>Status</th>
+                                <th>Grade</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-submissions"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-main">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-about">
+                            <h3>VIT University</h3>
+                            <p>VIT University is one of India's top-ranked institutions, committed to academic excellence and innovative research.</p>
+                        </div>
+                        <div class="footer-contact">
+                            <h3>Contact Us</h3>
+                            <address>
+                                Vellore, Tamil Nadu, India<br>
+                                Phone: +91 416 224 3091<br>
+                                Email: info@vit.ac.in
+                            </address>
+                        </div>
+                        <div class="footer-links">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="../about.html">About Us</a></li>
+                                <li><a href="../academics.html">Academic Programs</a></li>
+                                <li><a href="../policies.html">University Policies</a></li>
+                                <li><a href="#">Campus Map</a></li>
+                                <li><a href="#">Academic Calendar</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-resources">
+                            <h3>Teacher Resources</h3>
+                            <ul>
+                                <li><a href="#">Faculty Handbook</a></li>
+                                <li><a href="#">Research Portal</a></li>
+                                <li><a href="#">Library Resources</a></li>
+                                <li><a href="#">IT Support</a></li>
+                                <li><a href="#">Professional Development</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2025 VIT University. All Rights Reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="teacher-assignments.js"></script>
+</body>
+</html>

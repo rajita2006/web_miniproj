@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - VIT University</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <div class="top-bar">
+                <div class="contact-info">
+                    <span>Phone: +91 416 224 3091</span>
+                    <span>Email: info@vit.ac.in</span>
+                </div>
+                <div class="login-area">
+                    <button id="logout-button" class="fancy-btn">Logout</button>
+                </div>
+            </div>
+            <div class="main-header">
+                <div class="logo">
+                    <h1>VIT University</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="policies.html">University Policies</a></li>
+                        <li><a href="circulars.html">Circulars</a></li>
+                        <li><a href="grades.html">Student Grades</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="welcome-banner">
+                <div class="container">
+                    <div id="user-greeting">
+                        <h1>Welcome to Your Dashboard</h1>
+                        <p>To access your personalized dashboard, please log in.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-content">
+                <div class="container">
+                    <div id="student-dashboard" style="display: none;">
+                        <h2 class="section-title">Student Dashboard</h2>
+                        <div class="dashboard-grid">
+                            <div class="dashboard-card">
+                                <div class="card-icon">📝</div>
+                                <h3>Assignments</h3>
+                                <p>Submit assignments and view due dates</p>
+                                <a href="student/upload_assignment.html" class="card-link">View Assignments</a>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">📊</div>
+                                <h3>Grades</h3>
+                                <p>Check your academic performance</p>
+                                <a href="grades.html" class="card-link">View Grades</a>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">📚</div>
+                                <h3>Courses</h3>
+                                <p>Access your enrolled courses</p>
+                                <a href="student/courses.html" class="card-link">View Courses</a>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">📅</div>
+                                <h3>Calendar</h3>
+                                <p>View academic schedule and events</p>
+                                <a href="student/calendar.html" class="card-link">View Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="teacher-dashboard" style="display: none;">
+                        <h2 class="section-title">Teacher Dashboard</h2>
+                        <div class="dashboard-grid">
+                            <div class="dashboard-card">
+                                <div class="card-icon">📝</div>
+                                <h3>Assignments</h3>
+                                <p>Create and manage student assignments</p>
+                                <a href="teacher/manage_assignments.html" class="card-link">Manage Assignments</a>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">🗂️</div>
+                                <h3>Materials</h3>
+                                <p>Upload and manage course materials</p>
+                                <a href="teacher/upload_materials.html" class="card-link">Upload Materials</a>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">📊</div>
+                                <h3>Grades</h3>
+                                <p>Manage and submit student grades</p>
+                                <a href="teacher/manage_grades.html" class="card-link">Manage Grades</a>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">📚</div>
+                                <h3>Courses</h3>
+                                <p>Manage your teaching courses</p>
+                                <a href="teacher/courses.html" class="card-link">View Courses</a>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">👥</div>
+                                <h3>Attendance</h3>
+                                <p>Track student attendance records</p>
+                                <a href="teacher/attendance.html" class="card-link">Manage Attendance</a>
+                            </div>
+                            <div class="dashboard-card">
+                                <div class="card-icon">📅</div>
+                                <h3>Calendar</h3>
+                                <p>Schedule and manage academic events</p>
+                                <a href="teacher/calendar.html" class="card-link">View Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="not-logged-in">
+                        <div class="login-prompt">
+                            <h2>Please Log In</h2>
+                            <p>You need to be logged in to view your dashboard.</p>
+                            <button id="login-button" class="btn primary-btn">Login Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-main">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-about">
+                            <h3>VIT University</h3>
+                            <p>VIT University, one of the leading universities in India, is committed to excellence in education and research.</p>
+                        </div>
+                        <div class="footer-contact">
+                            <h3>Contact Us</h3>
+                            <address>
+                                Vellore, Tamil Nadu, India<br />
+                                Phone: +91 416 224 3091<br />
+                                Email: info@vit.ac.in
+                            </address>
+                        </div>
+                        <div class="footer-links">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="academics.html">Academic Programs</a></li>
+                                <li><a href="policies.html">University Policies</a></li>
+                                <li><a href="#">Campus Map</a></li>
+                                <li><a href="#">Academic Calendar</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2025 VIT University. All Rights Reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="login.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

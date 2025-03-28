@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Assignment - VIT University</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <div class="top-bar">
+                <div class="contact-info">
+                    <span>Phone: +91 416 224 3091</span>
+                    <span>Email: info@vit.ac.in</span>
+                </div>
+                <div class="login-area">
+                    <button id="logout-button" class="fancy-btn">Logout</button>
+                </div>
+            </div>
+            <div class="main-header">
+                <div class="logo">
+                    <h1>VIT University</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="policies.html">School Policies</a></li>
+                        <li><a href="circulars.html">Circulars</a></li>
+                        <li><a href="grades.html">Student Grades</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-banner">
+                <div class="banner-content">
+                    <h1>Upload Assignment</h1>
+                    <p>Submit your coursework for evaluation</p>
+                </div>
+            </section>
+
+            <section class="upload-section">
+                <div class="container">
+                    <h2 class="section-title">Assignment Submission</h2>
+                    <div class="form-container">
+                        <form id="assignment-form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="course">Course:</label>
+                                <select id="course" name="course" required>
+                                    <option value="">Select your course</option>
+                                    <option value="math101">Mathematics 101</option>
+                                    <option value="eng205">English Literature 205</option>
+                                    <option value="cs150">Computer Science 150</option>
+                                    <option value="bio200">Biology 200</option>
+                                    <option value="phy101">Physics 101</option>
+                                    <option value="hist110">History 110</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="assignment-title">Assignment Title:</label>
+                                <input type="text" id="assignment-title" name="assignment-title" placeholder="Enter the assignment title" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="due-date">Due Date:</label>
+                                <input type="date" id="due-date" name="due-date" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="assignment-file">Assignment File:</label>
+                                <input type="file" id="assignment-file" name="assignment-file" required>
+                                <p class="file-info">Accepted formats: PDF, DOCX, ZIP (Max size: 10MB)</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="comments">Additional Comments:</label>
+                                <textarea id="comments" name="comments" rows="4" placeholder="Any additional information for your instructor"></textarea>
+                            </div>
+                            
+                            <div class="form-buttons">
+                                <button type="submit" class="btn primary-btn">Submit Assignment</button>
+                                <button type="reset" class="btn secondary-btn">Clear Form</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="container">
+                <h2 class="section-title">My Uploaded Assignments</h2>
+                <div class="table-responsive">
+                    <table class="assignment-table">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Assignment Title</th>
+                                <th>Submission Date</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="assignments-list">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-main">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-about">
+                            <h3>VIT University</h3>
+                            <p>VIT University is a leading institution in India providing quality higher education and research opportunities.</p>
+                        </div>
+                        <div class="footer-contact">
+                            <h3>Contact Us</h3>
+                            <address>
+                                Vellore Institute of Technology, Vellore, India<br>
+                                Phone: +91 416 224 3091<br>
+                                Email: info@vit.ac.in
+                            </address>
+                        </div>
+                        <div class="footer-links">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="academics.html">Academic Programs</a></li>
+                                <li><a href="policies.html">University Policies</a></li>
+                                <li><a href="#">Campus Map</a></li>
+                                <li><a href="#">Academic Calendar</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-resources">
+                            <h3>Student Resources</h3>
+                            <ul>
+                                <li><a href="grades.html">Grade Portal</a></li>
+                                <li><a href="#">Library Catalog</a></li>
+                                <li><a href="#">Student Handbook</a></li>
+                                <li><a href="#">Career Services</a></li>
+                                <li><a href="#">IT Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2025 VIT University. All Rights Reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="student-assignment.js"></script>
+</body>
+</html>
